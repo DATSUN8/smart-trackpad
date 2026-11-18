@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Trackpad</title>
+<style>
+body {
+  font-family: sans-serif;
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+h1 { color: #38bdf8; }
+.panel {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 20px;
+}
+button {
+  background: #0284c7;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+#pad {
+  height: 300px;
+  background: #374151;
+  border: 2px solid #38bdf8;
+  border-radius: 16px;
+  margin-top: 20px;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+}
+</style>
+</head>
+<body>
+
+<h1>Smart Trackpad</h1>
+<p>iPhone × iPad Remote Control</p>
+
+<div class="panel">
+  <h3>接続状態</h3>
+  <p id="status">未接続</p>
+  <button onclick="connect()">接続する</button>
+</div>
+
+<div id="pad">
+  ここをタッチして操作
+</div>
+
+<script>
+function connect() {
+  document.getElementById("status").textContent =
+    "接続機能は準備中";
+}
+
+const pad = document.getElementById("pad");
+
+pad.addEventListener("pointerdown", () => {
+  pad.style.background = "#075985";
+});
+
+pad.addEventListener("pointerup", () => {
+  pad.style.background = "#374151";
+});
+
+</script>
+</body>
+</html>
